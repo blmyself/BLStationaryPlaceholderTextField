@@ -49,8 +49,11 @@
     
     if (self.borderStyle == UITextBorderStyleNone) {
         self.layer.cornerRadius = 6.0f;
-        self.layer.borderColor = [self rgbColorWithRed:123 Green:123 Blue:123 Alpha:1.0f].CGColor;
-        self.layer.borderWidth = 0.5f;
+        self.layer.borderColor = [self rgbColorWithRed:215 Green:215 Blue:215 Alpha:1.0f].CGColor;
+        
+        CGFloat scale = [[UIScreen mainScreen] scale];
+        CGFloat borderWidth = scale > 0.0 ? (1.0 / scale)+0.1 : 1.0;
+        self.layer.borderWidth = borderWidth;
     }
 
 }
